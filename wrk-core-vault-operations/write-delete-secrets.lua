@@ -11,6 +11,8 @@
 local counter = 1
 local threads = {}
 
+local print_secrets = "true"
+
 function setup(thread)
    thread:set("id", counter)
    table.insert(threads, thread)
@@ -65,6 +67,15 @@ end
 function response(status, headers, body)
    if status == 200  or status == 204 then
       responses = responses + 1
+      if print_secrets == "true" and body ~= nil then
+         if body == nil or body == "" then
+            return_msg = "Delete"
+         else
+            return_msg = body
+         end
+         local msg = "write-delete secrets response: %s"
+         print(msg:format(return_msg))
+      end
    end
 end
 

@@ -33,7 +33,7 @@ function request()
    if requests > 0 then
       writes = writes + 1
       -- cycle through paths from 1 to num_secrets in order
-      path = "/v1/read-test-2/data/secret-" .. writes
+      path = "/v1/read-test/data/secret-" .. writes
       -- minimal secret giving thread id and # of write
       -- body = '{"foo-' .. id .. '" : "bar-' .. writes ..'"}'
       -- add extra key with 100 bytes
