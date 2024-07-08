@@ -39,7 +39,7 @@ end
 function request()
    reads = reads + 1
    -- randomize path to secret
-   path = "/v1/read-test-2/data/secret-" .. math.random(num_secrets)
+   path = "/v1/read-test/data/secret-" .. math.random(num_secrets)
    requests = requests + 1
    return wrk.format(method, path, nil, body)
 end
