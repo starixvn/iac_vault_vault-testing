@@ -21,7 +21,7 @@ function init(args)
    writes = 0
    responses = 0
    method = "POST"
-   path = "/v1/read-test-2/data/secret-0"
+   path = "/v1/read-test/data/secret-0"
    body = '{"data":{}}'
    local msg = "thread %d created"
    print(msg:format(id))
